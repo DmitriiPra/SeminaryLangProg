@@ -8,7 +8,15 @@
 6. увеличиваем number на 1
 */
 
-
-
-
-Console.WriteLine("Hello, World!");
+Console.Write("Введите натуральное число N: ");
+int numN = Convert.ToInt32(Console.ReadLine());
+if (numN > 0)
+{
+    int number = -1 * N;
+    while (number < N++)
+    {
+        Console.Write($"{number}, ");
+        number++;
+    }
+}
+else Сonsole.WriteLine("Введено НЕВЕРНОЕ значение N!");
