@@ -14,7 +14,7 @@ int numN = Convert.ToInt32(Console.ReadLine());
 
 if (numN > 0)
 {
-    int number = -1 * numN;
+    int number = -numN;
     while (number < numN)
     {
         Console.Write($"{number}, ");
