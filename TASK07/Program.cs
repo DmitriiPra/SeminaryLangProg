@@ -10,5 +10,12 @@
 7. Выводим в консоль последнее значение N  без запятой
 */
 
-Console.Write("Введите натуральное число N: ");
-int numN = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите трехзначное число: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+if (n / 100 < 10 && n / 100 > 1)
+{
+    n = n % 10;
+    Console.WriteLine($"Значение единичного регистра = {n}");
+}
+else Console.WriteLine("Введено некорректное значение!");
