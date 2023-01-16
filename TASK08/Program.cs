@@ -8,8 +8,10 @@
 */
 
 Console.WriteLine("Эта программа выводит последовательность четных чисел от 1 до заданного Вами числа");
-Console.Write("Введите натуральное число значение которого от 2 и выше: ");
+Console.Write("Введите натуральное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
+
+if (number == 1) Console.WriteLine("Последовательность четных чисел до 1 отсутствует");
 
 if (number > 1)
 {
@@ -20,8 +22,8 @@ if (number > 1)
     while (i < index)
     {
         array[i] = 2 + (2 * i);
-        Console.WriteLine(array[i]); 
+        Console.WriteLine(array[i]);
         i++;
-    }  
+    }
 }
-else Console.WriteLine("Неверный ввод данных");
+else if (number != 1) Console.WriteLine("Неверный ввод данных");
