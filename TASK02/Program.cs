@@ -21,4 +21,4 @@ else if (numberA < numberB)
 {
     Console.WriteLine($"Большее число = {numberB}");
 }
-else Console.WriteLine($"Числа равны");
+else Console.WriteLine("Числа равны");
