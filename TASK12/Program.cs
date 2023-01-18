@@ -16,6 +16,7 @@ int CheckingMultiplicity(int numA, int numB)
 {
     return numA % numB;
 }
+
 int result = CheckingMultiplicity(numberA, numberB);
 if (result == 0) Console.WriteLine("КРАТНО");
 else Console.WriteLine($"НЕ КРАТНО, остаток = {result}");
