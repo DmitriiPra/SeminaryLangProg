@@ -13,7 +13,7 @@ string Diapason(string ind)
     case "2": return "диапазон координат точки: X < 0; Y > 0";
     case "3": return "диапазон координат точки: X < 0; Y < 0";
     case "4": return "диапазон координат точки: X > 0; Y < 0";
-    return "Введены неверные данные";
+    default: return "Введены неверные данные";
     }
 }
 string diapason = Diapason(index);
