@@ -9,7 +9,7 @@ void Table(int num)
     int count = 1;
     while (count <= num)
     {
-        System.Console.WriteLine($"{count, 5}  {Math.Pow(count, 2), 5}");
+        Console.WriteLine($"{count, 5}  {Math.Pow(count, 2), 5}");
         count++;
     }
 }
