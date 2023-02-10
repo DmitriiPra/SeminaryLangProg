@@ -5,9 +5,8 @@
 -45 -> 9
 */
 
-Console.Write("Введите число А:");
+Console.Write("Введите число А: ");
 int numberA = Convert.ToInt32(Console.ReadLine());
-//if (numberA < 0) numberA *= -1;
 
 int SummaNum(int a)
 {
