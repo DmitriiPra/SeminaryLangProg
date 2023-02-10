@@ -17,8 +17,8 @@ int Index(int cX, int cY)
     return 0;
 }
 
-int index = Index (coordX, coordY);
-string result = index != 0 ? 
-        $"координаты относятся к {index} четверти" 
+int index = Index(coordX, coordY);
+string result = index != 0 ?
+        $"координаты относятся к {index} четверти"
         : "Х или У равно 0";
 Console.WriteLine(result);
