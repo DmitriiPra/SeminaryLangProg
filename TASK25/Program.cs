@@ -14,15 +14,13 @@ int numberB = Convert.ToInt32(Console.ReadLine());
 if (numberB < 0) System.Console.WriteLine("Введено неверное значение B");
 else
 {
-    double DegreeA(double a, int b)
+    double degreeA = DegreeA(numberA, numberB);
+    Console.WriteLine($"{numberA}, {numberB} -> {degreeA}");
+}
+
+double DegreeA(double a, int b)
     {
         double res = 1;
         for (int i = 1; i <= b; i++) res *= a;
         return res;
     }
-
-    double degreeA = DegreeA(numberA, numberB);
-    Console.WriteLine($"{numberA}, {numberB} -> {degreeA}");
-}
-
-//Math.Pow((z1 - z2), 2))
