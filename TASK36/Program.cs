@@ -32,6 +32,6 @@ void SummaEvenNumbers(int[] array)
     System.Console.WriteLine(summ);
 }
 
-int[] arr = GenArray(5, 1, 21);
+int[] arr = GenArray(5, -99, 100);
 PrintArray(arr);
 SummaEvenNumbers(arr);

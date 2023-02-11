@@ -34,6 +34,6 @@ void DifferenceNumbersMaxMin(double[] array)
     double difference = Math.Round((maxNumber - minNumber), 2);
     Console.WriteLine(difference);
 }
-double[] arr = GenArray(5, 1, 100);
+double[] arr = GenArray(5, 0, 100);
 PrintArray(arr);
 DifferenceNumbersMaxMin(arr);
