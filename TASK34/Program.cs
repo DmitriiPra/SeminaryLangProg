@@ -21,16 +21,16 @@ void PrintArray(int[] arr)
     }
     Console.Write($"{arr[arr.Length - 1]}] -> ");
 }
-void EvenNumbered(int[] array)
+int EvenNumbered(int[] array)
 {
     int count = default;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] % 2 == 0) count++;
     }
-    System.Console.WriteLine(count);
+    return count;
 }
 
 int[] arr = GenArray(5, 100, 999);
 PrintArray(arr);
-EvenNumbered(arr);
+Console.WriteLine(EvenNumbered(arr));

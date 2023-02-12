@@ -21,19 +21,19 @@ void PrintArray(double[] arr)
     }
     Console.Write($"{arr[arr.Length - 1]}] -> ");
 }
-void DifferenceNumbersMaxMin(double[] array)
+double DifferenceNumbersMaxMin(double[] array)
 {
     double maxNumber = default;
     double minNumber = array[0];
-
+    double difference = default;
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i] > maxNumber) maxNumber = array[i];
         if (array[i] < minNumber) minNumber = array[i];
     }
-    double difference = Math.Round((maxNumber - minNumber), 2);
-    Console.WriteLine(difference);
+    return difference = Math.Round((maxNumber - minNumber), 1);
 }
+
 double[] arr = GenArray(5, 0, 100);
 PrintArray(arr);
-DifferenceNumbersMaxMin(arr);
+Console.WriteLine(DifferenceNumbersMaxMin(arr));

@@ -22,16 +22,16 @@ void PrintArray(int[] arr)
     }
     Console.Write($"{arr[arr.Length - 1]}] -> ");
 }
-void SummaEvenNumbers(int[] array)
+int SummaEvenNumbers(int[] array)
 {
     int summ = default;
     for (int i = 0; i < array.Length; i++)
     {
         if (i % 2 != 0) summ += array[i];
     }
-    System.Console.WriteLine(summ);
+    return summ;
 }
 
 int[] arr = GenArray(5, -99, 100);
 PrintArray(arr);
-SummaEvenNumbers(arr);
+Console.WriteLine(SummaEvenNumbers(arr));
