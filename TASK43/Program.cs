@@ -2,33 +2,40 @@
 // y = k1 * x + b1 и y = k2 * x + b2
 // значения k1, b1, k2, b2 задаются пользователем
 // 
+//     k01 * x + b01 = k02 * x + b02 -> 
+//     k01x - k02x = b02 - b01
+//     x(k01-k02) = b02 - b01
+//     x = (b02 - b01)/(k01-k02)
 
-Console.WriteLine("Введите значение k1: ");
-int k1 = Convert.ToInt32(Console.ReadLine());
+
 Console.WriteLine("Введите значение b1: ");
-int b1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите значение k2: ");
-int k2 = Convert.ToInt32(Console.ReadLine());
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите значение k1: ");
+double k1 = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Введите значение b2: ");
-int b2 = Convert.ToInt32(Console.ReadLine());
+double b2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Введите значение k2: ");
+double k2 = Convert.ToDouble(Console.ReadLine());
 
-int coordX = (b2 - b1) / (k1 - k2);
-int coordY = k1 * coordX + b1;
+void CrossCoordinates(double k01, double b01, double k02, double b02)
+{
+    double coordX = (b02 - b01) / (k01 - k02);
+    double coordY = k01 * coordX + b01;
 
-Console.WriteLine($"{coordX} , {coordY}");
+    Console.WriteLine($"координаты точки пересечения прямых: x = {coordX} , y = {coordY}");
+}
+CrossCoordinates(k1, b1, k2, b2);
 
-// int[] IntersectionPoint(int a1, int c1, int a2, int c2)
-// {
-//     int[] coordinats = new int[2];
-//     a1 * x + c1 = a2 * x + c2 -> 
-//     a1x - a2x = c2 - c1
-//     x(a1-a2) = c2 - c1
-//     x = (c2 - c1)/(a1-a2)
-//     coordinats[0] = (c2 - c1) / (a1 - a2);
-//     coordinats[1] = a1 * coordinats[0] + c1; // coordinats[1] = a1 * ((c2 - c1) / (a1 - a2)) + c1;
-//     return coordinats;
-// }
-// void PrintArray(int[] arr)
+/* решение через массив
+double[] IntersectionPoint(double k01, double b01, double k02, double b02)
+{
+    double[] coordinats = new double[2];
+
+    coordinats[0] = (b02 - b01) / (k01 - k02);
+    coordinats[1] = k01 * ((b02 - b01) / (k01 - k02)) + b01;
+    return coordinats;
+}
+// void PrintArray(double[] arr)
 // {
 //     for (int i = 0; i < arr.Length; i++)
 //     {
@@ -37,22 +44,5 @@ Console.WriteLine($"{coordX} , {coordY}");
 //     // Console.Write($"{arr[arr.Length - 1]}");
 // }
 
-// int intersectionPoint = IntersectionPoint(k1, b1, k2, b2);
-// PrintArray(coordinats);
-
-
-// int IntersectionPointY(int x1, int a1, int c1)
-// {
-//     int y = default;
-//     //a1 * x + c1 = a2 * x + c2
-//     return y = a1 * x1 + c1;
-// }
-
-
-// расчитываем значение Х из уравнения  k1 * x + b1 = k2 * x + b2
-// расчитываем значение У по полученному значению Х  y = k1 * x + b1
-//5x + 2 = 9x +4
-// 4x = 2
-// x = 0,5
-// y = 2,5 + 2
-// y= 4,5 + 4
+double intersectionPoint = IntersectionPoint(k1, b1, k2, b2);
+*/
