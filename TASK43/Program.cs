@@ -12,20 +12,17 @@ double b2 = Convert.ToDouble(Console.ReadLine());
 Console.WriteLine("Введите значение k2: ");
 double k2 = Convert.ToDouble(Console.ReadLine());
 
-void CrossCoordinates(double k01, double b01, double k02, double b02)
-{
-    double coordX = (b02 - b01) / (k01 - k02);
-    double coordY = k01 * coordX + b01;
+// void CrossCoordinates(double k01, double b01, double k02, double b02)
+// {
+//     double coordX = (b02 - b01) / (k01 - k02);
+//     double coordY = k01 * coordX + b01;
 
-    Console.WriteLine($"координаты точки пересечения прямых: x = {coordX} , y = {coordY}");
-}
-CrossCoordinates(k1, b1, k2, b2);
+//     Console.WriteLine($"координаты точки пересечения прямых: x = {coordX} , y = {coordY}");
+// }
+// CrossCoordinates(k1, b1, k2, b2);
 
-/*
+
 Решение через массив. 
-Не смог разобраться. Подскажите в чем проблема, выдает 2 ошибки: 
- 1. Не удается неявно преобразовать тип "double[]" в "double". 
- 2. Имя "coordinats" не существует в текущем контексте.
 
 double[] IntersectionPoint(double k01, double b01, double k02, double b02)
 {
@@ -42,6 +39,5 @@ void PrintArray(double[] arr)
         Console.Write($"{arr[i]}, ");
     }
 }
-double intersectionPoint = IntersectionPoint(k1, b1, k2, b2);
-PrintArray(coordinats);
-*/
+double[] intersectionPoint = IntersectionPoint(k1, b1, k2, b2);
+PrintArray(intersectionPoint);
