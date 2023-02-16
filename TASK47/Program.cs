@@ -36,5 +36,5 @@ void PrintArray(double[,] matrix)
         }
     }
 }
-double[,] genMatrix = GenMatrix(3, 4, 0, 100);
+double[,] genMatrix = GenMatrix(3, 4, -10, 10);
 PrintArray(genMatrix);
