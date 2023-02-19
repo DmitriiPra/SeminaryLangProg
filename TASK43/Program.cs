@@ -22,7 +22,7 @@ double k2 = Convert.ToDouble(Console.ReadLine());
 // CrossCoordinates(k1, b1, k2, b2);
 
 
-Решение через массив. 
+//Решение через массив. 
 
 double[] IntersectionPoint(double k01, double b01, double k02, double b02)
 {
