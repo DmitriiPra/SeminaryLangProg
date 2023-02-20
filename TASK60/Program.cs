@@ -9,4 +9,55 @@
 34(1,0,0) 26(1,0,1) 41(1,1,0) 55(1,1,1)
 */
 
+int[,,] GenMatrix3D(int rows, int columns, int depth, int min, int max)
+{
+    int count = 0;
+    int[,,] matrix = new int[rows, columns, depth];
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix.GetLength(2); k++)
+            {
+                matrix[i, j, k] = count;
+                count += 3;
+            }
+        }
+    }
+    return matrix;
+}
+void PrintArray(int[,,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        // Console.Write("|");
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix.GetLength(2); k++)
+            {
+                if (k < matrix.GetLength(2) - 1) Console.Write($"{matrix[i, j, k],3}  ");
+                else Console.WriteLine($"{matrix[i, j, k],3}");
+            }
+        }
+        Console.WriteLine();
+    }
+}
+void PrintWithIndex(int[,,] matrix3D)
+{
+    for (int i = 0; i < matrix3D.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix3D.GetLength(1); j++)
+        {
+            for (int k = 0; k < matrix3D.GetLength(2); k++)
+            {
+                Console.WriteLine($"{matrix3D[i, j, k],3} ({i}, {j}, {k})");
+            }
+        }
+        Console.WriteLine();
+    }
+}
 
+int[,,] genMatrix3D = GenMatrix3D(3, 3, 3, -9, 9);
+Console.WriteLine();
+PrintArray(genMatrix3D);
+PrintWithIndex(genMatrix3D);
