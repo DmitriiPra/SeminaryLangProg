@@ -27,7 +27,6 @@ void PrintArray(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        // Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],3}  ");
@@ -35,33 +34,37 @@ void PrintArray(int[,] matrix)
         }
     }
 }
-int[,] AmountMatrix(int[,] matrix1, int[,] matrix2)
+int[,] MatrixMultiplication(int[,] matrixA, int[,] matrixB)
 {
-    int[,] amountMatrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
-//     int temp = default;
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         int amountRow = default;
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             amountRow += matrix[i, j];
-//         }
-//         if (i == 0) temp = amountRow;
-//         else if (amountRow < temp)
-//         {
-//             indexRow = i;
-//             temp = amountRow;
-//         }
-//     }
-    return amountMatrix;
+    int[,] matrixC = new int[matrixA.GetLength(0), matrixB.GetLength(1)];
+    for (int i = 0; i < matrixA.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrixB.GetLength(1); j++)
+        {
+            matrixC[i, j] = 0;
+            for (int k = 0; k < matrixA.GetLength(1); k++)
+            {
+                matrixC[i, j] += matrixA[i, k] * matrixB[k, j];
+            }
+        }
+    }
+    return matrixC;
 }
 
-int[,] genMatrix1 = GenMatrix(5, 3, 0, 5);
-Console.WriteLine();
+int[,] genMatrix1 = GenMatrix(2, 3, 0, 3);
 PrintArray(genMatrix1);
-int[,] genMatrix2 = GenMatrix(3, 5, 0, 5);
 Console.WriteLine();
+int[,] genMatrix2 = GenMatrix(3, 2, 0, 3);
 PrintArray(genMatrix2);
-// int minimumAmountRow = MinimumAmountRow(genMatrix);
-// Console.WriteLine();
-// Console.WriteLine($"номер строки с наименьшей суммой элементов: {minimumAmountRow} строка");
+Console.WriteLine();
+if (genMatrix1.GetLength(1) != genMatrix2.GetLength(0))
+{
+    Console.WriteLine("Умножение матриц не возможно!");
+    Console.WriteLine("Количество столбцов первой матрицы должно"
+        + " быть равно количеству строк второй матрицы.");
+}
+else
+{
+    int[,] matrixMultipli = MatrixMultiplication(genMatrix1, genMatrix2);
+    PrintArray(matrixMultipli);
+}
