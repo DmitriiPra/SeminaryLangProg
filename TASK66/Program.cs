@@ -24,9 +24,9 @@ int SummNaturalNumber(int m, int n)
     return m;
 }
 
-Console.Write("Задайте значение натуральное число M: ");
+Console.Write("Задайте натуральное число M: ");
 int numberM = Convert.ToInt32(Console.ReadLine());
-Console.Write("Задайте значение натуральное число N: ");
+Console.Write("Задайте натуральное число N: ");
 int numberN = Convert.ToInt32(Console.ReadLine());
 if (numberM > 0 && numberN > 0)
 {
