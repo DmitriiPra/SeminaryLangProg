@@ -9,6 +9,11 @@ M = 4; N = 8 -> 30 = 4 + 5 + 6 + 7 + 8
 
 */
 
+Console.Write("Задайте натуральное число M: ");
+int numberM = Convert.ToInt32(Console.ReadLine());
+Console.Write("Задайте натуральное число N: ");
+int numberN = Convert.ToInt32(Console.ReadLine());
+
 int SummNaturalNumber(int m, int n)
 {
     if (m > n)
@@ -24,10 +29,6 @@ int SummNaturalNumber(int m, int n)
     return m;
 }
 
-Console.Write("Задайте натуральное число M: ");
-int numberM = Convert.ToInt32(Console.ReadLine());
-Console.Write("Задайте натуральное число N: ");
-int numberN = Convert.ToInt32(Console.ReadLine());
 if (numberM > 0 && numberN > 0)
 {
     int summNaturalNumber = SummNaturalNumber(numberM, numberN);
